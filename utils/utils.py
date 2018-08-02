@@ -29,8 +29,6 @@ def load_data(image_dir: str, one_hot=True):
         for i, image_path in enumerate(member_dir.iterdir()):
             X.append(imread(image_path))
             Y.append(member_id)
-            if i >= 2:
-                break
 
     if one_hot:
         Y = np_utils.to_categorical(Y)
