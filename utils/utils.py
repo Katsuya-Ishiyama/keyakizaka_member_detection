@@ -2,6 +2,7 @@
 
 import pathlib
 from keras.utils import np_utils
+import numpy as np
 from skimage.io import imread
 
 
@@ -30,6 +31,7 @@ def load_data(image_dir: str, one_hot=True):
             X.append(imread(image_path))
             Y.append(member_id)
 
+    X = np.array(X)
     if one_hot:
         Y = np_utils.to_categorical(Y)
 
